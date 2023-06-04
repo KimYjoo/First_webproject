@@ -3,8 +3,8 @@ body{
 }
 .parent{
     background: black;
-    height: 1300px;
-    width: 1480px;
+    height: 1500px;
+    width: 100%;
 }
 .back_img {
     background-image: url(img/back_intro.jpg);

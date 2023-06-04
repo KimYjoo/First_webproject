@@ -1,6 +1,6 @@
 .parent{
-    width:100%;
-    height:800px;
+    width: 100%;
+    height: 1080px;
     display: flex;
     justify-content: center;
     background: #f0f0f0;
@@ -8,8 +8,9 @@
     background-size: 100%;
 }
 .main{
-    margin: 5%;
     width: 500px;
+    height: 70%;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.822);

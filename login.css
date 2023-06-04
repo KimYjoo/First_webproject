@@ -1,6 +1,6 @@
 .parent{
-    width: 1480px;
-    height:800px;
+    width: 100%;
+    height: 1080px;
     display: flex;
     justify-content: center;
     background: #f0f0f0;
