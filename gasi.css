@@ -1,0 +1,37 @@
+body{
+    margin:0;
+}
+.parent{
+    background: black;
+    height: 1300px;
+    width: 1480px;
+}
+.back_img {
+    background-image: url(img/back_intro.jpg);
+    background-color: black;
+    height: 900px;
+    background-size: 100%;
+}
+.blank{
+    height: 72px;
+    width: 100%;
+}
+.community{
+    width: 80%;
+    height: 100%;
+    background: rgba(184, 184, 184, 0.444);
+    margin:0 auto;
+    border-radius: 5px;
+}
+/* .header{
+    position: fixed;
+    background: green;
+    top:0px;
+} */
+
+.community_table{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,35 @@
+.parent{
+    width: 1480px;
+    height:800px;
+    display: flex;
+    justify-content: center;
+    background: #f0f0f0;
+    background-image: url(img/back.png);
+    background-size: 100%;
+}
+.main{
+    margin-top: 220px;
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.822);
+    border-radius: 5px;
+}
+.blank{
+    height: 40px;
+}
+.home_key{
+    width:100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+a{
+    font-size: 30px;
+}
+.login{
+    display: flex;
+    
+    justify-content: center;
+}

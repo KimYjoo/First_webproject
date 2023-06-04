@@ -1,0 +1,36 @@
+
+.header{
+    display:flex;
+    width: 1480px;
+    margin:auto;
+    height:86px;
+    background: rgba(78, 78, 78, 0.5);
+}
+.home_key_area{
+    width:300px;
+    margin-left: 50px;
+    border-radius: 5px;
+    line-height: 86px;
+}
+.nav{
+    display:flex;
+    
+    justify-content: flex-end;
+    line-height:86px;
+    width: calc(1280px - 300px);
+}
+
+.nav > li{
+    margin-left:54px;
+    
+}
+.nav > li > a{
+    color: white;
+}
+.nav > li > p:not(:last-child){
+    border-right:1px solid #000;
+}
+
+.home_key_area > a{
+    color: white;
+}

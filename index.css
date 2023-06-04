@@ -1,0 +1,37 @@
+
+.parent{
+    background-color: black;
+    margin:-5;
+    height: 1500px;
+    width: 1480px;
+}
+.back_img {
+    background-image: url(img/back_intro.jpg);
+    background-color: black;
+    height: 900px;
+    background-size: 100%;
+    
+}
+/* .header{
+    position: fixed;
+    background: green;
+    top:0px;
+} */
+
+.community_table{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.community{
+    height: 48%;
+    width: 37%;
+    background: rgba(184, 184, 184, 0.444);
+    border-radius: 5px;
+}
+.blank_hori{
+    width:100px;
+    height:10px;
+}
