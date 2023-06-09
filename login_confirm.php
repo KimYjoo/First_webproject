@@ -38,6 +38,8 @@
         else
         {
             session_start();
+            $_SESSION["user_id"] = $row["user_id"];
+
             $_SESSION["login_id"] = $row["login_id"];
             $_SESSION["user_name"] = $row["user_name"];
             $_SESSION["department"] = $row["department"];

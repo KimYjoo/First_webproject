@@ -1,0 +1,47 @@
+
+body{
+    margin:0;
+}
+.parent{
+    background: black;
+    margin:-5;
+    height: 1500px;
+    width: 100%;
+}
+img{
+    width: 250px;
+    height: 400px;
+}
+.back_img{
+    background-image: url(img/back_intro.jpg);
+    background-color: black;
+    height: 100%;
+    background-size: 100%;
+}
+.blank{
+    height: 72px;
+    width: 100%;
+}
+.community{
+    width: 80%;
+    height: 60%;
+    background: rgba(184, 184, 184, 0.75);
+    margin:0 auto;
+    border-radius: 5px;
+}
+/* .header{
+    position: fixed;
+    background: green;
+    top:0px;
+} */
+
+.community_table{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+ul > li{
+    justify-content: center;
+    text-align: center;
+}

@@ -1,0 +1,87 @@
+
+.parent{
+    background-color: black;
+    margin:-5;
+    height: 1500px;
+    width: 100%;
+}
+.back_img {
+    background-image: url(img/back_intro.jpg);
+    /* background-color: white; */
+    height: 100%;
+    background-size: 100%;
+    
+}
+/* .header{
+    position: fixed;
+    background: green;
+    top:0px;
+} */
+.blank{
+    height: 72px;
+    width: 100%;
+}
+img{
+    margin:0 auto;
+    width: 300px;
+    height: 500px;
+}
+.community_table{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.community{
+    width: 80%;
+    height: 70%;
+    background: rgba(184, 184, 184, 0.75);
+    margin:0 auto;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.btns{
+    display: flex;
+    justify-content: center;
+}
+.bookimg{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.col{
+    text-align: center;
+}
+.book_info > .img{
+    margin: 0 auto;
+}
+a.button {
+    display: block;
+    position: relative;
+    align-content: center;
+    float: left;
+    width: 120px;
+    padding: 0;
+    margin: 10px 20px 10px 0;
+    font-weight: 600;
+    text-align: center;
+    line-height: 30px;
+    color: #FFF;
+    border-radius: 5px;
+    transition: all 0.2s ;
+  }
+.btnRed {
+    background: #c52020;
+  }
+.btnFade.btnRed:hover {
+    background: #730101;
+  }
+.btnBlue {
+    background: #259818;
+}
+.btnFade.btnBlue:hover {
+    background: #146d02;
+  }

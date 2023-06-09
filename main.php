@@ -10,8 +10,8 @@
                 <div class = "main">
                     <div class = " search_main">
                         <div class = "searchArea">
-                            <form>
-                                <input type = "search" placseholder ="Search">
+                            <form name = "bookname" id = "bookname" method = "post" action = "book_check.php">  
+                                <input type = "text" name = "bookname" placseholder ="책이름을 입력하시오">
                                 <span>검색</span>
                             <form>
                         

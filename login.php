@@ -24,14 +24,15 @@
 	    		    </div>
                     <div id="login_form">
                   	
-                    <input type="text" name="id" placeholder="아이디" >
-                    <input type="password" id="pass" name="pass" placeholder="비밀번호" >
-                  	
-                  	<div id="login_btn">
-                      	<a href="#"><img src="./img/login.png" onclick="check_input()"></a>
+                        <input type="text" name="id" placeholder="아이디" >
+                        <input type="password" id="pass" name="pass" placeholder="비밀번호" >
+                  	    
+                  	    <div id="login_btn">
+                            <a href="#" title="Button fade purple" class="button btnFade btnPurple" onclick="check_input()">로그인</a>
+                        </div>
+                      	<!-- <a href="#"><img src="./img/login.png" onclick="check_input()"></a> -->
                   	</div>		    	
            		</form>
-        		</div>
             </div>
         </div>
     </div>

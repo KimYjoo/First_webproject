@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>PHP 프로그래밍 입문</title>
 <link rel="stylesheet" type="text/css" href="common.css">
-<link rel="stylesheet" type="text/css" href="board.css">
+<link rel="stylesheet" type="text/css" href="book_list.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
@@ -21,26 +21,39 @@
             <section>
             <div id="board_box">
 	    <h3>
-	    	게시판 > 목록보기
+	    	책 > 목록보기
 		</h3>
-	    <ul id="board_list">
+	    <ul id="book_list">
 				<li>
 					<span class="col1">번호</span>
 					<span class="col2">제목</span>
-					<span class="col3">글쓴이</span>
-					<span class="col4">첨부</span>
-					<span class="col5">등록일</span>
-					<span class="col6">조회</span>
+					<span class="col3">지은이</span>
+					<span class="col4">출판사</span>
+					<span class="col4">책종류</span>
 				</li>
 <?php
 	if (isset($_GET["page"]))
 		$page = $_GET["page"];
 	else
 		$page = 1;
-
+    session_start();
 	$con = mysqli_connect("localhost:3306", "user1", "12345", "test");
-	$sql = "select * from board order by board_id desc";
-	$result = mysqli_query($con, $sql);
+    if(isset($_SESSION["books"])){
+        $books = $_SESSION["books"];
+        for($i = 0 ; $i < count($books); $i++){
+            if($books[$i] == "") break;
+            if($i == 0) 
+                $sql = "select * from book where ";
+            else $sql .= " or ";
+            $sql .= "book_id = ".$books[$i];
+        }
+    }
+    else {
+        $sql = "select * from book";
+    }
+    
+    $result = mysqli_query($con, $sql);
+	
 	$total_record = mysqli_num_rows($result); // 전체 글 수
 
 	$scale = 10;
@@ -58,28 +71,24 @@
 
    for ($i=$start; $i<$start+$scale && $i < $total_record; $i++)
    {
-      mysqli_data_seek($result, $i);
-      // 가져올 레코드로 위치(포인터) 이동
-      $row = mysqli_fetch_array($result);
-      // 하나의 레코드 가져오기
-	  $num         = $row["board_id"];
-    $id          = $row["login_Id"];
-    $name        = $row["Name"];
-    $subject     = $row["Subject"];
-    $regist_day  = $row["regist_day"];
-    $hit         = $row["Hit"];
-      if ($row["File_name"])
-      	$file_image = "<img src='./img/file.gif'>";
-      else
-      	$file_image = " ";
+        mysqli_data_seek($result, $i);
+        // 가져올 레코드로 위치(포인터) 이동
+        $row = mysqli_fetch_array($result);
+        // 하나의 레코드 가져오기
+	    $id         = $row["book_id"];
+        $name        = $row["name"];
+        $author        = $row["author"];
+        $publisher     = $row["publisher"];
+        $category      = $row["category"];
+        $img = "img/".$id.".jpeg";
 ?>
-				<li>
+				<li id = "book_tuple">
 					<span class="col1"><?=$number?></span>
-					<span class="col2"><a href="board_view.php?num=<?=$num?>&page=<?=$page?>"><?=$subject?></a></span>
-					<span class="col3"><?=$name?></span>
-					<span class="col4"><?=$file_image?></span>
-					<span class="col5"><?=$regist_day?></span>
-					<span class="col6"><?=$hit?></span>
+					<span class="col2"><a href="book_info.php?num=<?=$num?>&page=<?=$page?>&book=<?=$id?>"><?=$name?></a></span>
+					<span class="col3"><?=$author?></span>
+					<span class="col4"><?=$publisher?></span>
+					<span class="col4"><?=$category?></span>
+                    <img src = <?=$img?> href="book_info.php?num=<?=$num?>&page=<?=$page?>&book=<?=$id?>">
 				</li>	
 <?php
    	   $number--;
@@ -93,7 +102,7 @@
 	if ($total_page>=2 && $page >= 2)	
 	{
 		$new_page = $page-1;
-		echo "<li><a href='board_list.php?page=$new_page'>◀ 이전</a> </li>";
+		echo "<li><a href='book_list.php?page=$new_page'>◀ 이전</a> </li>";
 	}		
 	else 
 		echo "<li>&nbsp;</li>";
@@ -120,20 +129,7 @@
 ?>
 			</ul> <!-- page -->	    	
 			<ul class="buttons">
-				<li><button onclick="location.href='board_list.php'">목록</button></li>
-				<li>
-<?php 
-    if($_SESSION["login_id"]) {
-?>
-					<button onclick="location.href='board_form.php'">글쓰기</button>
-<?php
-	} else {
-?>
-					<a href="javascript:alert('로그인 후 이용해 주세요!')"><button>글쓰기</button></a>
-<?php
-	}
-?>
-				</li>
+				<li><button onclick="location.href='book_list.php'">목록</button></li>
 			</ul>
 	</div> <!-- board_box -->
 

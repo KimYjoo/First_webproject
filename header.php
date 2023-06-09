@@ -33,8 +33,8 @@
 <?php
     }
 ?>
-                        <li><a href = "board_list.php">LIST</a></li>
-                        <li><a href = "#">SERVICE</a></li>
+                        <li><a href = "board_list.php">BOARD</a></li>
+                        <li><a href = "book_unset.php">BOOKS</a></li>
                         <li><a href = "#">CONTACT</a></li>
                     </ul>
                 </div>
